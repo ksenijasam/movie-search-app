@@ -21,7 +21,7 @@ function MovieApi() {
         return {
           id: movieData.id,
           title: movieData.title,
-          moviePoster: movieData.poster_path,
+          moviePoster: 'https://www.themoviedb.org/t/p/original' + movieData.poster_path,
           year: movieData.release_date.substring(0, 4),
           plot: movieData.overview,
           genre: movieData.genre_ids 

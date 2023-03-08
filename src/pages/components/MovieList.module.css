@@ -14,9 +14,8 @@
     }
 }
 
-.item-style {
+.movie {
     flex-basis: 30%;
-    background-color: #006DAA;
     padding: 50px;
     border: 1px solid #003559;
     color: #B9D6F2;
@@ -25,10 +24,15 @@
     border-radius: 10%;
 }
 
+.movie:hover {
+    color: #7272AB;
+    background-color: #700548;
+}
+
 .title-style {
     margin: 10px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #003559;
+    color: #7272AB;
 }

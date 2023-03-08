@@ -32,7 +32,7 @@ const Movie: React.FC<movieDetails> = (props: movieDetails) => {
       />}
       <div onClick={openMovieDetailsModal}>
         <h2>{props.title}</h2>
-        <img src={props.moviePoster} alt="Movie Poster"></img>
+        <img src={props.moviePoster} width="300" height="400" alt="Movie Poster"></img>
         <h2>{props.year}</h2>
         <h2>{props.plot}</h2>
         <h2>{props.genre}</h2>

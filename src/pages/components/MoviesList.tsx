@@ -10,13 +10,13 @@ const MovieList: React.FC<any> = (props) => {
       <div className={classes['title-style']}>
         <h1>Movie List App</h1>
       </div>
-      <div className={classes['container']}>
+      <div className={classes.container}>
         {props.movies.map((movie: any) => (
-          <div className={classes['item-style']}>
+          <div className={classes.movie}>
             <Movie
               key={movie.id}
               title={movie.title}
-              moviePoster='{movie.moviePoster}'
+              moviePoster={movie.moviePoster}
               year={movie.year}
               plot={movie.plot}
               genre={movie.genre}

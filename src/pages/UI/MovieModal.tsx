@@ -12,7 +12,7 @@ const MovieModal: React.FC<any> = props => {
                 </header>
                 <div className={classes.content}>
                     <div>
-                        <img src={props.moviePoster} alt="Movie image"></img>
+                        <img src={props.moviePoster} width="300" height="400" alt="Movie image"></img>
                     </div>
                     <div>
                         {props.year}, {props.genre_id}
