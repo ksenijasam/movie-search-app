@@ -3,6 +3,15 @@ import Movie from './Movie';
 
 import classes from './MovieList.module.css';
 
+interface movieDetails {
+  id: string,
+  title: string;
+  moviePoster: string,
+  year: string,
+  plot: string,
+  genre: string
+}
+
 const MovieList: React.FC<any> = (props) => {
 
   const [searchText, setSearchText] = useState('');
@@ -23,7 +32,7 @@ const MovieList: React.FC<any> = (props) => {
       </div>
 
       <div className={classes.container}>
-        {props.movies.map((movie: any) => (
+        {props.movies.map((movie: movieDetails) => (
           <div className={classes.movie}>
             <Movie
               key={movie.id}

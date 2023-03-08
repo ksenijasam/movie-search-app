@@ -2,7 +2,6 @@ import MovieList from './components/MoviesList'
 
 import React, { useState, useEffect, useCallback } from 'react';
 
-
 function MovieApi() {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState(null);
