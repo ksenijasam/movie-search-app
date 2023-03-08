@@ -17,7 +17,7 @@ function MovieApi() {
 
       const data = await response.json();
 
-      const filteredMovies = data.results.map((movieData:any) => {
+      const movies = data.results.map((movieData:any) => {
         return {
           id: movieData.id,
           title: movieData.title,
@@ -28,9 +28,43 @@ function MovieApi() {
         };
       });
 
-      setMovies(filteredMovies);
+      setMovies(movies);
     } catch (error) {
       throw new Error("Can't return movies.");
+    }
+  }, []);
+
+
+  const fetchMoviesFilter = useCallback(async () => {
+    setError(null);
+    try {
+      const requestOptions = {
+        method: 'FETCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ nameFilter: searchInput })
+      };
+
+      const response = await fetch('data.json', requestOptions);
+      if (!response.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      const data = await response.json();
+
+      const filteredMovies = data.results.map((filteredMovieData: any) => {
+        return {
+          id: filteredMovieData.id,
+          title: filteredMovieData.title,
+          moviePoster: 'https://www.themoviedb.org/t/p/original' + filteredMovieData.poster_path,
+          year: filteredMovieData.release_date.substring(0, 4),
+          plot: filteredMovieData.overview,
+          genre: filteredMovieData.genre_ids
+        };
+      });
+
+      setMovies(filteredMovies);
+    } catch (error) {
+      throw new Error("Can't filter movies.");
     }
   }, []);
 
@@ -38,7 +72,8 @@ function MovieApi() {
     fetchMoviesHandler();
   }, [fetchMoviesHandler]);
 
-  let content:any = "Found no movies";
+
+  let content;
 
   if (movies.length > 0) {
     content = <MovieList movies={movies} />;

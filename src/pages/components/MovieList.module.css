@@ -36,3 +36,28 @@
     justify-content: center;
     color: #7272AB;
 }
+
+.input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input input {
+    width: 80%;
+    height: 2rem;
+    margin: 2rem 0;
+}
+
+.input button {
+    height: 2rem;
+    margin: 2rem 0;
+    background-color: #7272AB;
+    color: white;
+    padding: 0.5em;
+}
+
+.input button:hover {
+    background-color: #700548;
+}
+

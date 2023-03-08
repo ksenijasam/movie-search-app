@@ -1,15 +1,27 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import Movie from './Movie';
 
 import classes from './MovieList.module.css';
 
 const MovieList: React.FC<any> = (props) => {
-  
+
+  const [searchText, setSearchText] = useState('');
+
+  const searchTextChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchText(event.target.value);
+  };
+
   return (
     <div>
       <div className={classes['title-style']}>
         <h1>Movie List App</h1>
       </div>
+
+      <div className={classes.input}>
+        <input type="text" onChange={props.saveSearchInput(searchText)} ></input>
+        <button type="button" onClick={props.saveSearchInput}> Search </button>
+      </div>
+
       <div className={classes.container}>
         {props.movies.map((movie: any) => (
           <div className={classes.movie}>
