@@ -1,23 +1,7 @@
-
-
+import React, { useState, useEffect, useCallback } from 'react';
 import Movie from './Movie';
 
 import classes from './MovieList.module.css';
-
-import React, { useState, useEffect, useCallback } from 'react';
-
-// interface MoviesObject{
-//   title: string;
-//   moviePoster: string,
-//   year: string,
-//   plot: string,
-//   genre: string
-// };
-
-function openModal() {
-  alert(2);
-}
-
 
 const MovieList: React.FC<any> = (props) => {
   
@@ -26,10 +10,7 @@ const MovieList: React.FC<any> = (props) => {
       <div className={classes['title-style']}>
         <h1>Movie List App</h1>
       </div>
-      <div className={classes['title-style']}>
-        {/* <input type="text" value={value} onChange={(e) => setValue(e.target.value)}/> */}
-      </div>
-      <div className={classes['container']} onClick={openModal}>
+      <div className={classes['container']}>
         {props.movies.map((movie: any) => (
           <div className={classes['item-style']}>
             <Movie
