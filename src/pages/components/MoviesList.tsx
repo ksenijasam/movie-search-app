@@ -18,8 +18,8 @@ const MovieList: React.FC<any> = (props) => {
       </div>
 
       <div className={classes.input}>
-        <input type="text" onChange={props.saveSearchInput(searchText)} ></input>
-        <button type="button" onClick={props.saveSearchInput}> Search </button>
+        <input type="text" onChange={searchTextChangeHandler} ></input>
+        <button type="button" onClick={() => props.onChange(searchText)}> Search </button>
       </div>
 
       <div className={classes.container}>

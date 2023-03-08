@@ -34,14 +34,15 @@ function MovieApi() {
     }
   }, []);
 
+  const [searchValue, setSearchValue] = useState('');
 
-  const fetchMoviesFilter = useCallback(async () => {
+  const fetchMoviesFilter = useCallback(async (searchValue: string) => {
     setError(null);
     try {
       const requestOptions = {
         method: 'FETCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nameFilter: searchInput })
+        body: JSON.stringify({ nameFilter: searchValue})
       };
 
       const response = await fetch('data.json', requestOptions);
@@ -76,7 +77,7 @@ function MovieApi() {
   let content;
 
   if (movies.length > 0) {
-    content = <MovieList movies={movies} />;
+    content = <MovieList movies={movies} onChange={(name:string)=> {setSearchValue(name); fetchMoviesFilter(name)}}/>;
   }
 
   return (
