@@ -34,7 +34,7 @@ const Movie: React.FC<movieDetails> = (props: movieDetails) => {
         closeModal={closeModal}
       />}
 
-      <div onClick={openMovieDetailsModal} className={classes.center}>
+      <div onClick={openMovieDetailsModal}>
 
         <div className={classes.centerContent}>
           <h2>{props.title}</h2>

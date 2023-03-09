@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import Movie from './Movie';
 
 import classes from './MovieList.module.css';
@@ -55,9 +56,7 @@ const MovieList: React.FC<any> = (props) => {
               year={movie.year}
               plot={movie.plot}
               genre={movie.genre} 
-              closeModal={function (): {} {
-                return {};
-              }}/>
+              closeModal={function (): {} {return {};}}/>
           </div>
         ))}
       </div>
