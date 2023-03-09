@@ -1,1 +1,1 @@
-Namecheap task
+Movie search app
