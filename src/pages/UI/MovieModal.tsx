@@ -11,13 +11,13 @@ const MovieModal: React.FC<any> = props => {
                     <header className={classes.header}>
                         <h2>{props.title}</h2>
                     </header>
-                    <div>
-                        <img src={props.moviePoster} width="300" height="400" alt="Movie image"></img>
-                    </div>
-                    Released in {props.year}, genre {props.genre}
-                    <p>
+
+                    <img src={props.moviePoster} width="300" height="400" alt="Movie image"></img>
+                    <h4>Released in {props.year}, genre {props.genre}</h4>
+                    <p className={classes.paragraph}>
                         {props.plot}
                     </p>
+                    
                     <footer>
                         <button type='button' onClick={props.closeModal} className={classes.button}>
                             Close

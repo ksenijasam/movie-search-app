@@ -58,3 +58,7 @@
 .button:hover {
   background-color: #700548;
 }
+
+.paragraph {
+  padding: 0.7rem
+}
