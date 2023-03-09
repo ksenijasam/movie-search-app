@@ -9,7 +9,8 @@ interface movieDetails {
   moviePoster: string,
   year: string,
   plot: string,
-  genre: string
+  genre: string,
+  closeModal: () => void
 }
 
 const Movie: React.FC<movieDetails> = (props: movieDetails) => {
@@ -38,6 +39,7 @@ const Movie: React.FC<movieDetails> = (props: movieDetails) => {
         <div className={classes.centerContent}>
           <h2>{props.title}</h2>
         </div>
+
         <img src={props.moviePoster} width="100%%" height="400" alt="Movie Poster"></img>
 
         <div className={classes.centerContent}>

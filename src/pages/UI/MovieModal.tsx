@@ -2,7 +2,15 @@ import React from 'react';
 
 import classes from './MovieModal.module.css';
 
-const MovieModal: React.FC<any> = props => {
+interface movieDetails {
+    title: string;
+    moviePoster: string,
+    year: string,
+    plot: string,
+    genre: string,
+    closeModal: () => {}
+}
+const MovieModal: React.FC<movieDetails> = props => {
     return (
         <div>
             <div className={classes.backdrop} />
@@ -17,7 +25,7 @@ const MovieModal: React.FC<any> = props => {
                     <p className={classes.paragraph}>
                         {props.plot}
                     </p>
-                    
+
                     <footer>
                         <button type='button' onClick={props.closeModal} className={classes.button}>
                             Close
