@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import MovieModal from '../UI/MovieModal';
 
-import classes from './MovieList.module.css';
+import classes from './Movie.module.css';
 
 interface movieDetails {
   title: string;
@@ -35,13 +35,14 @@ const Movie: React.FC<movieDetails> = (props: movieDetails) => {
 
       <div onClick={openMovieDetailsModal} className={classes.center}>
 
-        <h2>{props.title}</h2>
+        <div className={classes.centerContent}>
+          <h2>{props.title}</h2>
+        </div>
         <img src={props.moviePoster} width="100%%" height="400" alt="Movie Poster"></img>
 
-        <div>
+        <div className={classes.centerContent}>
           <h2>Released in {props.year}</h2>
-          <section>{props.plot}</section>
-          <h2>{props.genre}</h2>
+          <h4> Genre {props.genre}</h4>
         </div>
 
       </div>
