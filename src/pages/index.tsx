@@ -35,13 +35,14 @@ function MovieApi() {
 
   const [searchValue, setSearchValue] = useState('');
 
+  //Fetch of filtered movies based on value that is passed as argument, and that is value of input search field
   const fetchMoviesFilter = useCallback(async (searchValue: string) => {
     setError(null);
     try {
       const requestOptions = {
         method: 'FETCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ nameFilter: searchValue})
+        body: JSON.stringify({nameFilter: searchValue})
       };
 
       const response = await fetch('data.json', requestOptions);
@@ -84,7 +85,6 @@ function MovieApi() {
       <section>{content}</section>
     </React.Fragment>
   )
-
 }
 
 export default MovieApi;
