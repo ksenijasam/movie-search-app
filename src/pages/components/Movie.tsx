@@ -40,7 +40,7 @@ const Movie: React.FC<movieDetails> = (props: movieDetails) => {
           <h2>{props.title}</h2>
         </div>
 
-        <img src={props.moviePoster} width="100%%" height="400" alt="Movie Poster"></img>
+        <img src={props.moviePoster} width="100%" height="400" alt="Movie Poster"></img>
 
         <div className={classes.centerContent}>
           <h2>Released in {props.year}</h2>
